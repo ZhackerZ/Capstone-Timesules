@@ -1,0 +1,264 @@
+<?php
+/**
+ * Timesules new prompt.
+ *
+ * @author Tyler Hadidon
+ * @copyright 2012
+ */
+define('IN_TIMESULES', true);
+require_once 'source/startup.php';
+
+$manager->requireLogin();
+
+$data = null;
+$toList = null;
+$allowDraft = true;
+
+//Accessing a capsule
+$sql->connect();
+
+// Load draft capsule
+if(!is_null($_GET["edit"]) && $_GET["edit"]=="true"){
+	$_SESSION["draft"] = true;
+
+	$id = $sql->escape($_GET["capsule"]);
+	$data = $sql->select("capsule", "*", "WHERE `cap_id`='{$id}'");
+	$data = $sql->fetch();
+}
+
+
+if(!is_null($_GET["capsule"])) {
+	$id = $sql->escape($_GET["capsule"]);
+
+	$cap = $sql->select("user_has_capsules", "*", "WHERE `cap_id`='{$id}' AND `user_id`='{$user->get("id")}'"); //
+	if ($cap === FALSE){
+		return; // no capsules found
+	} else {
+		$cap = $sql->select("capsules", "*", "WHERE `cap_id`='{$id}'"); //
+		$cap = $sql->fetch();
+	
+		// $sql->select("posts", "*", "WHERE `post_id`='{$id}' AND
+		// 	(`post_user`='{$user->get("id")}' OR (FIND_IN_SET('{$user->get("id")}',`post_to`)!=0 AND `post_draft`='0')) AND
+		// 	(`post_draft`='1' OR `post_lock`>UNIX_TIMESTAMP())");
+		// $row = $sql->fetch();
+	
+		// $sql->select("users","user_id, user_first, user_last, user_avatar","WHERE `user_email` IN({$row["cap_email_to"]})");
+		$sql->select("users","*","WHERE `user_email` IN({$row["cap_email_to"]})");
+		$toList = $sql->fetchAll();
+	
+		if($cap["cap_id"] == $id) {
+			$data = $cap;
+			$allowDraft = ($cap["cap_draft"] == "1");
+		} else {
+			$data = FALSE;
+		}
+	}
+
+} else if(!is_null($_GET["capsule"])) {
+
+	$c = $sql->escape($_GET["capsule"]);
+
+	$sql->select("users","user_id,user_first,user_last,user_avatar","WHERE `user_id` IN({$c})");
+	$toList = $sql->fetchAll();
+}
+
+$cap = null;
+
+//Creating a New Capsule
+if(!is_null($_POST["draft"]) || !is_null($_POST["send"]) ){
+	require_once 'source/FormatBar.func.php';
+
+	$result = "";
+	$error = "";
+
+	$cap = $_POST["capsule"];
+	$title = substr(strip_tags($cap["title"]),0,200);
+
+	// Format lock & release dates
+	$lockDate = date("Y-m-d H:i:s", time());
+
+	$relDate = $cap["cap_release"];
+	$relDate = explode("T", $relDate);
+	$relDate = $relDate[0]." ".$relDate[1].":00";
+	
+	// Time conversion Eastern to Europe/London. This is needed to ensure release of capsules at correct times.
+	$date = date_create($relDate);
+	date_add($date, date_interval_create_from_date_string('5 hours'));
+	//$relDate= $date->format('Y-m-d H:i:s');
+	
+	// The string $relDate looks like this: YYYY-MM-DD HH:MM:SS, so we need the substring starting from position 11.
+	$relTime = substr($relDate, 11);
+
+	$msg = $cap["cap_msg"];
+	$vis = ($cap["cap_vis"] == "1") ? "1" :"0";
+	$toVal = $cap["cap_to"];
+
+	$updateID = $sql->escape($cap["update"]);
+
+	// Editing draft?
+	$isDraft = !is_null($_POST["draft"]);
+	$isUpdate = ($updateID != "");
+	$allowDraft = $isDraft || !$isUpdate;
+
+	// Process lock and release date/time
+
+	// Form Validation
+	if($title == "") $error .= "Please enter a prompt.<br />";
+
+	if($lockDate == "") $error .= "Please enter a lock date.<br />";
+	else if(!$lockDate) $error .= "Lock date is invalid.<br />";
+
+	if($relDate == "") $error .= "Please enter a release date.<br />";
+	else if(!$relDate) $error .= "Relase date is invalid.<br />";
+
+	else if(strtotime($relDate) <= strtotime("now"))
+		$error .= "The release date/time must be after the current date/time and lock date/time.<br />".strtotime($relDate);
+
+	if($msg == "") $error .= "Please enter a capsule message.<br />";
+	if($toVal == "") $error .= "Please add contacts to share capsule with or add yourself for a personal capsule.<br />";
+
+	// Validate contacts
+	$ids = explode(",", $toVal);
+	$to = Array();
+
+	$contacts = $sql->select("user_has_contacts", "*", "WHERE `user_id`='{$user->get("id")}' OR `contact_id`='{$user->get("id")}'");
+	$contacts = $sql->fetchAll();
+
+	$myContactIds= array();
+
+	foreach ($contacts as $cont) {
+		if($cont["user_id"] == $user->get("id")){
+			array_push($myContactIds, $cont["contact_id"]);
+		} else {
+			array_push($myContactIds, $cont["user_id"]);
+		}
+	}
+
+	foreach($ids as $id) {
+		if($id == "") continue;
+		// if( (in_array($id, $myContactIds) || $id == $user->get("id") ) && !in_array($id, $to))
+		if( in_array($id, $myContactIds) || $id == $user->get("id") )
+			$to[] = $id;
+		else {
+			$error .= "There was a problem reading the contacts to share with.
+			Remember, you cannot share with contacts that have not accepted your contact request.";
+			break; // If there was an error, kill it
+		}
+	}
+
+	// GET ATTACHMENTS
+	// $attachments = getAttachments();
+
+	// Finally, if there are no errors, insert/update
+	if($error === "") {
+
+		$recipients = Array();
+
+		foreach ($to as $id) {
+			$sql->select("users", "user_email", "WHERE `user_id`='{$id}'");
+			$recip = $sql->fetch();
+			$recipients[] = $recip;
+		}
+
+
+		$insertList = array();
+		$c = 0;
+		foreach ($recipients as $recip) {
+			$insert = Array(
+				//"cap_email_from"=>$user->get("email"), Caitlin: this isn't in the capsules table?
+				"cap_email_to"=> $recipients[$c]["user_email"],
+				"cap_title"=>$title,
+				"cap_msg"=>$msg,
+				"cap_time"=>$relTime,
+				"cap_lock"=>$lockDate,
+				"cap_release"=>$relDate,
+				"cap_vis"=>$vis,
+				"cap_draft"=>($isDraft)?"1":"0"
+				// "post_attachments"=>implode(";", $attachments)
+				);
+
+			$sqlresult = $sql->escape($insert);
+			$insertList[] = $sqlresult;
+			$c++;
+		}
+
+		// UPDATES (if need be)
+		// if($isUpdate) {
+		// 	// Varifiy we are allowed to edit this post
+		// 	$sql->select("posts", "`post_user`,`post_id`,`post_draft`,`post_lock`,`post_to`",
+		// 		"WHERE (`post_user`='{$user->get("id")}' OR FIND_IN_SET('{$user->get("id")}',`post_to`)!=0)
+		// 		AND `post_id`='{$updateID}'");
+		// 	$row = $sql->fetch();
+
+		// 	if($updateID != $row["post_id"])
+		// 		$error = "Could not find the time capsule in order to update it. Please try again or create a new one.";
+		// 	else if($user->get("id") != $row["post_user"] && !in_array($user->get("id"), explode(",", $row["post_to"])))
+		// 		$error = "You are not the author of that capsule!";
+		// 	else if($row["post_lock"] <= time() && $row["post_draft"] != "1")
+		// 		$error = "This time capsule has already been locked and cannot be edited.";
+		// 	else if($row["post_draft"] != "1" && $isDraft)
+		// 		$error = "You cannot make a draft off of an already submitted time capsule.";
+		// 	else if($sql->update("posts", $insert, "WHERE `post_id`='{$updateID}'") !== FALSE) {
+		// 		$result = (($isDraft)?"Time Capsule draft updated!":"Time Capsule ".(($lock<=time())?"sealed and buried":"updated and open for edits")."!");
+		// 	} else {
+		// 		$error = "Failed to update database. Please try again.";
+		// 	}
+
+		// // Otherwise, insert
+		// } else
+		foreach ($insertList as $insertUser) {
+
+			if(($updateID = $sql->insert("capsules", $insertUser)) !== FALSE) {
+
+				$val = Array("cap_id"=>$updateID, "user_id"=>$user->get("id"));//, "role"=>"owner");
+
+				if($sql->insert("user_has_capsules", $val)) {
+
+					foreach ($to as $id) {
+					//add notifcation to recipient
+						//$notification = array("user_id"=>$id, "cap_id"=>$updateID, "type"=>Manager::RELEASED_CAPSULE);
+						// Caitlin - there is no cap_id or type in the user_has_capsules table ^
+						$notMsg = "You have a Timesule available!"; // TODO, We have no idea what they mean by message, but it's a column in the table.
+						$notification = array("user_id"=>$id, "message"=>$notMsg);
+						$note_result = $sql->insert("notifications", $notification);
+
+						if($id != $user->get("id")){
+							// Add record to user_has_capsules
+							$val = Array("cap_id"=>$updateID, "user_id"=>$id);
+							$result = $sql->insert("user_has_capsules", $val);
+
+							if(!$result || !$note_result){
+								$error = "Error adding recipients to user_has_capsules table";
+								break;
+							}
+						}
+					}
+				}
+
+				$result = (($isDraft) ? "Time Capsule saved as draft!" : "Time Capsule ".(($lock<=time()) ? "sealed and buried" : "added and open for edits")."!");
+				$cap = null;
+
+			} else {
+				$error = "Failed to insert into the database. Please try again.";
+			}
+		}
+
+	}
+
+	if($error != "") {
+		$error = "<strong>One or more errors have occurred!</strong><br />{$error}";
+
+		// $sql->select("users","user_id, user_first, user_last, user_avatar","WHERE `user_id` IN({$to})");
+		// $toList = $sql->fetchAll();
+
+ 		// Delete uploaded files if we had an error. Otherwise they are lost...
+		// deleteAttachments($attachments);
+	}
+
+}
+
+// Load theme page
+// $cap_result = array("tite"=>$title, "lock"=>$lockDate, "rel"=>$relDate, "msg"=>$msg, "error"=>$error, "tos"=>$to, "recipts"=>$recipients, "sqlresult"=>$sqlresult);
+
+$theme->load("capsule_page", Array("title"=>"Capsule", "toList"=>$toList, "allowDraft"=>$allowDraft, "error"=>$error, "result"=>$result, "capsule"=>$data, "cap_result"=>$cap_result) );
+?>

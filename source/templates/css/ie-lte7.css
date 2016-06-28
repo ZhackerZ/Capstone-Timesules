@@ -1,0 +1,111 @@
+/**** Page Header ****/
+#page-content { position: relative; z-index: -1; }
+
+/**** Select From Styler ****/
+.selectForm-select-box-left {
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 3;
+}
+
+.selectForm-select-box-text {
+	display: block;
+	margin-left: 5px;
+	padding-right: 10px;
+}
+
+.selectForm-select-box-right {
+	display: block;
+	position: absolute;
+	top: 0px;
+	right: 5px;
+	z-index: 3;
+}
+
+/**** Cross Page ****/
+.circles { display: inline; }
+
+/**** Table Layouts ****/
+.table, .table-row { display: block; width: 100%; }
+.table-row { height: 25px; padding-top: 5px; }
+.table-row div { display: block; float: left; }
+.table-row.header div { text-align: center; text-shadow: 0px 1px #FFF; color: #494b4d; font-weight: bold; font-size: 14px; }
+
+/**** Welcome Header ***/
+#login-box-wrapper {
+	background-color: rgb(0,119,167);
+}
+
+#signup-form .form-left {
+	display: block;
+	float: left;
+	padding-top: 4px;
+}
+
+#signup-form #refreshCaptcha,
+#send-a-capsule-wrapper,
+#welcome-right-content {
+	display: inline;
+}
+
+/**** Main Header ***/
+
+#main-header-bar a { display: inline; }
+#main-header-bar .separator { display: inline; }
+
+/*** Left and Right Context Bars ***/
+
+.leftBar, .rightBar { display: block; float: left; }
+.rightBar { position: absolute; top: 0px; right: 3px; }
+.leftBar .sideContentWrapper { left: -3px; }
+.rightBar .sideContentWrapper { right: -6px; }
+.sideContent { background-color: #E7E7E7; }
+
+/**** Center Content ****/
+#centerContent {
+	display: block;
+	width: 589px;
+}
+
+#newestReleasedTimesules,#userProfileContent { background-color: #c3dbe5; }
+#timePromptForm div .separator, .groupsCreateForm div .separator { display: none; }
+
+/**** Page Content Divs ****/
+#newestReleasedTimesules,#userProfileContent { width: 535px; }
+#timePrompt { width: 700px; }
+#calendar { width: 725px; }
+#groupsContent,#settingsPage { width: 100%; }
+
+/**** Time Prompt ****/
+#timePromptForm #formatBar .formatButton { display: block; float: left; background-color: #E9E9EA; } 
+
+/**** Time Capsules ****/
+#timecapList { width: 1000px; }
+#timecapList .timecapBlock { display: inline; }
+
+.contactsPage { width: 1000px; }
+#contactsList,#newContacts { width: 775px; }
+.contactsPage .contactBlock { display: inline; }
+
+/**** Groups Page ****/
+#groupDetails #groupTabs div { display: inline; }
+#groupsContent .blank-row { background-color: transparent; height: 5px; }
+
+#capsuleList .col1 { width: 150px; }
+#capsuleList .col2 { width: 75px; }
+#capsuleList .col3 { width: 175px; }
+#capsuleList .col4 { width: 175px; }
+
+#responseList .col1 { width: 125px; }
+#responseList .col2 { width: 200px; }
+#responseList .col3 { width: 150px; }
+
+/**** Calendar ****/
+#calendar .hover { background-color: #818181; }
+#calendarContent .table-row div span { position: relative; top: -3px; border: 0px; }
+#calendarContent .table-row { margin-bottom: 50px; }
+#calendarContent #dayHeadings { margin-bottom: 0px; }
+#ledgend { margin-top: 20px; }
+#ledgend div, #ledgend .circles { display: inline; }

@@ -1,0 +1,36 @@
+[28-Jan-2015 04:21:40 UTC] PHP Fatal error:  Uncaught SQLException: [302 No MySQL Connection]: No Connection
+
+  thrown in /home/mcouncil3/public_html/source/MySQL.class.php on line 79
+[28-Jan-2015 04:21:53 UTC] PHP Fatal error:  Uncaught SQLException: [302 No MySQL Connection]: No Connection
+
+  thrown in /home/mcouncil3/public_html/source/MySQL.class.php on line 79
+[28-Jan-2015 04:21:57 UTC] PHP Fatal error:  Uncaught SQLException: [302 No MySQL Connection]: No Connection
+
+  thrown in /home/mcouncil3/public_html/source/MySQL.class.php on line 79
+[28-Jan-2015 04:24:45 UTC] PHP Fatal error:  Uncaught SQLException: [302 No MySQL Connection]: No Connection
+
+  thrown in /home/mcouncil3/public_html/source/MySQL.class.php on line 79
+[28-Jan-2015 23:30:26 UTC] PHP Fatal error:  Uncaught SQLException: [300 MySQL Connect Error]: Failed to connect to the MySQL server. Access denied for user 'mcouncil3@localhost'@'localhost' (using password: YES)
+
+  thrown in /home/mcouncil3/public_html/source/MySQL.class.php on line 53
+[28-Jan-2015 23:31:22 UTC] PHP Fatal error:  Uncaught SQLException: [300 MySQL Connect Error]: Failed to connect to the MySQL server. Access denied for user 'mcouncil3'@'localhost' (using password: YES)
+
+  thrown in /home/mcouncil3/public_html/source/MySQL.class.php on line 53
+[02-Feb-2015 23:58:07 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 66322432 bytes) in /home/mcouncil3/public_html/source/templates/accountSettings_page.php on line 29
+[02-Feb-2015 23:58:25 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 66584576 bytes) in /home/mcouncil3/public_html/source/templates/accountSettings_page.php on line 29
+[03-Feb-2015 03:39:08 UTC] PHP Fatal error:  Call to a member function setTimezone() on a non-object in /home/mcouncil3/public_html/capsule.php on line 90
+[04-Feb-2015 01:38:01 UTC] PHP Fatal error:  Method name must be a string in /home/mcouncil3/public_html/timecap.php on line 98
+[04-Feb-2015 23:10:34 UTC] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 66322432 bytes) in /home/mcouncil3/public_html/source/templates/accountSettings_page.php on line 29
+[06-Feb-2015 03:01:28 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[06-Feb-2015 03:03:15 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[06-Feb-2015 03:03:33 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[06-Feb-2015 03:03:38 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[06-Feb-2015 03:03:40 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[06-Feb-2015 03:07:34 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[06-Feb-2015 03:08:18 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[09-Feb-2015 02:04:42 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[09-Feb-2015 02:59:17 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[09-Feb-2015 02:59:21 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[09-Feb-2015 03:01:17 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[09-Feb-2015 03:01:42 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87
+[09-Feb-2015 03:03:04 UTC] PHP Fatal error:  Call to a member function format() on a non-object in /home/mcouncil3/public_html/capsule.php on line 87

@@ -1,0 +1,115 @@
+[07-Nov-2014 18:10:57 UTC] PHP Warning:  require(hey.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/debug-log.php on line 11
+[07-Nov-2014 18:10:57 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'hey.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/debug-log.php on line 11
+[07-Nov-2014 18:11:14 UTC] PHP Warning:  require(hey.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /var/www/debug-log.php on line 11
+[07-Nov-2014 18:11:14 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'hey.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/debug-log.php on line 11
+[12-Nov-2014 23:22:17 UTC] PHP Parse error:  syntax error, unexpected '.', expecting ')' in /var/www/source/templates/notifications_bar.php on line 39
+[12-Nov-2014 23:22:46 UTC] PHP Parse error:  syntax error, unexpected '.', expecting ')' in /var/www/source/templates/notifications_bar.php on line 39
+[12-Nov-2014 23:23:25 UTC] PHP Parse error:  syntax error, unexpected '.', expecting ')' in /var/www/source/templates/notifications_bar.php on line 39
+[12-Nov-2014 23:39:23 UTC] PHP Parse error:  syntax error, unexpected T_ELSE in /var/www/source/templates/notifications_bar.php on line 125
+[12-Nov-2014 23:45:10 UTC] PHP Parse error:  syntax error, unexpected ',' in /var/www/source/templates/notifications_bar.php on line 53
+[12-Nov-2014 23:45:15 UTC] PHP Parse error:  syntax error, unexpected ',' in /var/www/source/templates/notifications_bar.php on line 53
+[12-Nov-2014 23:48:45 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:48:55 UTC] PHP Fatal error:  Cannot use string offset as an array in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:48:57 UTC] PHP Fatal error:  Cannot use string offset as an array in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:48:59 UTC] PHP Fatal error:  Cannot use string offset as an array in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:49:20 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:49:22 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:49:37 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:49:40 UTC] PHP Parse error:  syntax error, unexpected '[', expecting ']' in /var/www/source/templates/notifications_bar.php on line 63
+[12-Nov-2014 23:50:05 UTC] PHP Fatal error:  Cannot use string offset as an array in /var/www/source/templates/notifications_bar.php on line 63
+[13-Nov-2014 00:19:57 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /var/www/source/templates/right_sidebar.php on line 15
+[13-Nov-2014 00:20:54 UTC] PHP Fatal error:  Cannot use object of type User as array in /var/www/source/templates/notifications_bar.php on line 81
+[13-Nov-2014 00:21:06 UTC] PHP Fatal error:  Cannot use object of type User as array in /var/www/source/templates/notifications_bar.php on line 81
+[13-Nov-2014 00:23:16 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /var/www/source/templates/right_sidebar.php on line 15
+[13-Nov-2014 00:23:34 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /var/www/source/templates/right_sidebar.php on line 15
+[13-Nov-2014 00:23:53 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /var/www/source/templates/right_sidebar.php on line 15
+[13-Nov-2014 00:24:32 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /var/www/source/templates/right_sidebar.php on line 15
+[13-Nov-2014 00:27:34 UTC] PHP Fatal error:  Call to a member function get() on a non-object in /var/www/source/templates/right_sidebar.php on line 15
+[13-Nov-2014 01:08:43 UTC] PHP Parse error:  syntax error, unexpected '{' in /var/www/source/templates/notifications_bar.php on line 92
+[13-Nov-2014 04:02:27 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/contacts.php on line 221
+[13-Nov-2014 15:22:33 UTC] PHP Parse error:  syntax error, unexpected ',' in /var/www/source/templates/right_sidebar.php on line 25
+[13-Nov-2014 15:23:08 UTC] PHP Parse error:  syntax error, unexpected ',' in /var/www/source/templates/right_sidebar.php on line 25
+[13-Nov-2014 15:47:10 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/includes/functions.php on line 24
+[13-Nov-2014 15:47:26 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/includes/functions.php on line 9
+[13-Nov-2014 15:48:11 UTC] PHP Fatal error:  Call to undefined function getMyContacts() in /var/www/source/templates/right_sidebar.php on line 12
+[14-Nov-2014 01:02:20 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 01:02:21 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 01:02:25 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 01:02:29 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 01:08:58 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 01:08:59 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 15:59:50 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 15:59:54 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 15:59:57 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 16:00:00 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 16:00:06 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 16:00:07 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 16:00:11 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[14-Nov-2014 16:00:14 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[16-Nov-2014 21:32:01 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[16-Nov-2014 21:32:02 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[16-Nov-2014 21:33:05 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[16-Nov-2014 21:34:47 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[16-Nov-2014 21:34:48 UTC] PHP Fatal error:  Call to a member function select() on a non-object in /var/www/contacts.php on line 14
+[17-Nov-2014 03:57:44 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/source/templates/contacts_page.php on line 145
+[17-Nov-2014 03:58:17 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/source/templates/contacts_page.php on line 144
+[17-Nov-2014 03:58:33 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/source/templates/contacts_page.php on line 144
+[17-Nov-2014 04:39:12 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/contacts.php on line 67
+[17-Nov-2014 04:49:36 UTC] PHP Parse error:  syntax error, unexpected T_ELSE in /var/www/contacts.php on line 58
+[25-Nov-2014 03:39:23 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /var/www/source/templates/capsule_page.php on line 167
+[25-Nov-2014 03:39:32 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /var/www/source/templates/capsule_page.php on line 167
+[25-Nov-2014 10:27:38 UTC] PHP Fatal error:  Using $this when not in object context in /var/www/source/templates/capsule_page.php on line 3
+[25-Nov-2014 12:03:43 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/source/startup.php on line 40
+[25-Nov-2014 12:04:03 UTC] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'vendor/autoload.php' (include_path='.:/usr/share/php:/usr/share/pear') in /var/www/source/startup.php on line 40
+[25-Nov-2014 12:05:37 UTC] PHP Fatal error:  Class 'DebugBar\StandardDebugBar' not found in /var/www/source/startup.php on line 44
+[25-Nov-2014 12:18:15 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 34
+[25-Nov-2014 12:19:03 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 36
+[25-Nov-2014 12:19:06 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 36
+[25-Nov-2014 12:19:45 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ',' or ';' in /var/www/source/startup.php on line 45
+[25-Nov-2014 12:20:03 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 36
+[25-Nov-2014 12:24:48 UTC] PHP Fatal error:  Call to a member function addMessage() on a non-object in /var/www/source/templates/capsule_page.php on line 5
+[25-Nov-2014 12:25:41 UTC] PHP Fatal error:  Call to a member function addMessage() on a non-object in /var/www/source/templates/capsule_page.php on line 5
+[25-Nov-2014 12:26:09 UTC] PHP Fatal error:  Call to a member function addMessage() on a non-object in /var/www/source/templates/capsule_page.php on line 7
+[25-Nov-2014 12:26:26 UTC] PHP Fatal error:  Call to a member function addMessage() on a non-object in /var/www/source/templates/capsule_page.php on line 8
+[25-Nov-2014 12:27:42 UTC] PHP Fatal error:  Call to a member function addMessage() on a non-object in /var/www/source/templates/capsule_page.php on line 8
+[25-Nov-2014 12:28:07 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 45
+[25-Nov-2014 12:28:34 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 46
+[25-Nov-2014 12:31:15 UTC] PHP Fatal error:  Class 'StandardDebugBar' not found in /var/www/source/templates/capsule_page.php on line 6
+[25-Nov-2014 12:32:55 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 45
+[25-Nov-2014 12:33:58 UTC] PHP Fatal error:  Call to a member function renderHead() on a non-object in /var/www/source/templates/main_header.php on line 45
+[25-Nov-2014 12:44:18 UTC] PHP Fatal error:  Class 'DebugBar\StandardDebugBar' not found in /var/www/source/templates/main_header.php on line 14
+[25-Nov-2014 13:26:16 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/capsule.php on line 80
+[25-Nov-2014 13:26:58 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/capsule.php on line 80
+[25-Nov-2014 14:29:03 UTC] PHP Fatal error:  Undefined class constant 'NEW_GROUP_PROMPT' in /var/www/source/templates/notifications_bar.php on line 79
+[25-Nov-2014 14:34:48 UTC] PHP Fatal error:  Class 'Manger' not found in /var/www/capsule.php on line 188
+[30-Nov-2014 23:17:50 UTC] PHP Parse error:  syntax error, unexpected T_ECHO in /var/www/source/templates/notifications_bar.php on line 99
+[30-Nov-2014 23:37:57 UTC] PHP Parse error:  syntax error, unexpected '{' in /var/www/source/templates/right_sidebar.php on line 28
+[30-Nov-2014 23:46:14 UTC] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /var/www/timecap.php on line 138
+[02-Dec-2014 15:36:02 UTC] PHP Fatal error:  Undefined class constant 'RELEASED_CAPSULE' in /var/www/capsule.php on line 189
+[02-Dec-2014 15:59:06 UTC] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /var/www/source/templates/capsule_page.php on line 35
+[02-Dec-2014 15:59:34 UTC] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /var/www/source/templates/capsule_page.php on line 35
+[02-Dec-2014 15:59:36 UTC] PHP Parse error:  syntax error, unexpected T_DOUBLE_ARROW in /var/www/source/templates/capsule_page.php on line 35
+[03-Dec-2014 00:24:08 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/timecap.php on line 151
+[03-Dec-2014 00:44:07 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/timecap.php on line 184
+[03-Dec-2014 00:53:52 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'DateTime::__construct() expects parameter 2 to be DateTimeZone, integer given' in /var/www/source/templates/timecap_page.php:10
+Stack trace:
+#0 /var/www/source/templates/timecap_page.php(10): DateTime->__construct('Y-m-d h:i:s', 1417568032)
+#1 /var/www/source/Theme.class.php(81): include('/var/www/source...')
+#2 /var/www/timecap.php(184): Theme->load('timecap_page', Array)
+#3 {main}
+  thrown in /var/www/source/templates/timecap_page.php on line 10
+[03-Dec-2014 01:13:41 UTC] PHP Parse error:  syntax error, unexpected '}' in /var/www/timecap.php on line 177
+[03-Dec-2014 01:40:35 UTC] PHP Parse error:  syntax error, unexpected '{' in /var/www/timecap.php on line 97
+[03-Dec-2014 01:42:23 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/source/templates/timecap_page.php on line 106
+[03-Dec-2014 03:00:02 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:00:31 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:01:52 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:03:11 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:05:32 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:06:43 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:14:12 UTC] PHP Parse error:  syntax error, unexpected $end in /var/www/timecap.php on line 179
+[03-Dec-2014 03:42:22 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:42:27 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 03:43:18 UTC] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /var/www/load.php on line 126
+[03-Dec-2014 04:47:21 UTC] PHP Fatal error:  Undefined class constant 'RELEASED_PERSONAL' in /var/www/source/templates/accountSettings_page.php on line 61
+[03-Dec-2014 04:48:13 UTC] PHP Fatal error:  Undefined class constant 'NEW_GROUP_PROMPT' in /var/www/source/templates/accountSettings_page.php on line 61
